@@ -1,0 +1,98 @@
+@import '../style/constants';
+@import '../style/vendor-prefixes';
+@import '../style/palette';
+@import '../style/theme';
+
+$bc-navbar-height-default: 56px !default;
+$bc-navbar-height-landscape: 48px !default;
+$bc-navbar-height-desktop: 64px !default;
+
+$bc-navbar-font-size: 20px !default;
+$bc-navbar-padding: 16px !default;
+$bc-navbar-row-padding: 4px !default;
+
+@mixin bc-navbar-height($height) {
+  .bc-navbar {
+    min-height: $height;
+  }
+  .bc-navbar-row {
+    height: $height;
+  }
+}
+
+@mixin bc-navbar-color($palette) {
+  background: bc-color($palette);
+  color: bc-color($palette, default-contrast);
+}
+
+@mixin bc-navbar-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .bc-navbar {
+    background: bc-color($background, app-bar);
+    color: bc-color($foreground, text);
+
+    &.bc-primary {
+      @include bc-navbar-color($primary);
+    }
+
+    &.bc-accent {
+      @include bc-navbar-color($accent);
+    }
+
+    &.bc-warn {
+      @include bc-navbar-color($warn);
+    }
+  }
+}
+
+.bc-navbar {
+    width: 100%;
+    box-sizing: border-box;
+    @include flex-box;
+    @include flex-flow;
+
+    // Font Styling
+    font-size: $bc-navbar-font-size;
+    font-weight: 500;
+    font-family: $bc-font-family;
+    
+    padding: 0 $bc-navbar-padding;
+
+    img {
+        display: inline;
+    }
+
+    .bc-navbar-filler {
+        flex: 1 1 auto;
+    }
+
+    .bc-navbar-row {
+        box-sizing: border-box;
+
+        padding: 0 $bc-navbar-row-padding;
+
+        @include flex-box;
+        @include flex-flow(row);
+        align-items: center;
+
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+// Set the default height for the navbar.
+@include bc-navbar-height($bc-navbar-height-default);
+
+@media all and ($bc-gt-xsmall) {
+  @include bc-navbar-height($bc-navbar-height-desktop);
+}
+
+@media all and ($bc-landscape) {
+  @include bc-navbar-height($bc-navbar-height-landscape);
+}
+

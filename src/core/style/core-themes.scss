@@ -1,0 +1,35 @@
+// Import all the components themes indipendents.
+@import './animations';
+@import '../backdrop/backdrop.directive';
+
+// Import all the components themes.
+@import '../content/content.component';
+@import '../icon/icon.component';
+@import '../divider/divider.component';
+@import '../navbar/navbar.component';
+@import '../list/list.component';
+@import '../button/button.component';
+
+@import '../map/map.component';
+@import '../details/details.component';
+@import '../revisions/revisions.component';
+@import '../inputs/inputs.component';
+@import '../tooltip/tooltip.component';
+@import '../fixed_mask/mask-controller.component';
+
+// Create a full theme.
+@mixin bc-theme($theme) {
+  @include bc-content-theme($theme);
+  @include bc-icon-theme($theme);
+  @include bc-divider-theme($theme);
+  @include bc-navbar-theme($theme);
+  @include bc-list-theme($theme);
+  @include bc-button-theme($theme);
+
+  @include bc-map-theme($theme);
+  @include bc-details-theme($theme);
+  @include bc-revision-theme($theme);
+  @include bc-inputs-theme($theme);
+  @include bc-tooltip-theme($theme);
+  @include bc-mask-theme($theme);
+}
