@@ -1,6 +1,6 @@
 {
   "name": "rifugi-cai-source",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "private": true,
   "description": "The rifugi CAI project is an implementation of a management system of shelters for Club Alpino Italiano in Angular.js.",
   "keywords": [
@@ -9,27 +9,31 @@
     "CAI"
   ],
   "homepage": "",
-  "bugs": "https://github.com/sisay82/RifugiCAI/issues",
+  "bugs": "https://github.com/Axelloid/RifugiCAI-dev/issues",
   "license": "MIT",
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/sisay82/RifugiCAI/blob/master/LICENSE"
+      "url": "https://github.com/Axelloid/RifugiCAI-dev/blob/master/LICENSE"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sisay82/RifugiCAI.git"
+    "url": "https://github.com/Axelloid/RifugiCAI-dev.git"
   },
   "engines": {
-    "node": "10.13.0",
-    "npm": "6.4.1"
+    "node": "14.16.0",
+    "npm": "6.14.11"
   },
   "author": "Michele Geri <sisay82@gmail.com>",
   "contributors": [
     {
       "name": "Lorenzo Bonicelli",
       "email": "lorenzobonicelli@libero.it+"
+    },
+    {
+      "name": "Alessio Popolo",
+      "email": "alessiopopolo@gmail.com"
     }
   ],
   "scripts": {
