@@ -37,7 +37,7 @@ const conf: { [type: string]: IConfig } = {
     },
     heroku: {
         DEV: true,
-        SERVER_URL: "app-cai.herokuapp.com",
+        SERVER_URL: "app-cai2.herokuapp.com",
         APP_PORT: process.env.PORT,
         MONGO_URI: process.env.MONGODB_URI,
         getAppBaseURL: function () {

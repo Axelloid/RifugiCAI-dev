@@ -61,7 +61,7 @@ export function checkEnumPermissionForShelter(profile: Tools.IUserProfile, shelI
 
 @Injectable()
 export class BcAuthService {
-    private _disableAuth = false;
+    private _disableAuth = true;
     private userBaseUrl = '/user';
     private newShelter = false;
     private localPermissions: any[];
