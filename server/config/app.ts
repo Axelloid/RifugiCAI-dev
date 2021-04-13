@@ -17,7 +17,15 @@ const ALLOWED_ORIGINS = [
     "https://infomont-cai.herokuapp.com",
     "https://rifugi.cai.it",
     "http://unico.rifugi.cai.it",
-    "https://unico.rifugi.cai.it"
+    "https://unico.rifugi.cai.it",
+    "http://localhost:8000",
+    "https://localhost:8000",
+    "localhost:8000",
+    "127.0.0.1:8000",
+    "http://localhost:4200",
+    "https://localhost:4200",
+    "localhost:4200",
+    "127.0.0.1:4200"
 ];
 
 export const store = new MongoStore({
