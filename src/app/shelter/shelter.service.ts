@@ -10,8 +10,8 @@ import { Buffer } from 'buffer';
 @Injectable()
 export class ShelterService {
 
-    private sheltersBaseUrl = '/api/shelters';
-    // private sheltersBaseUrl: string = 'http://localhost:27010/api/shelters';
+    // private sheltersBaseUrl = '/api/shelters';
+    private sheltersBaseUrl: string = 'http://localhost:8000/api/shelters';
     // private sheltersBaseUrl: string = 'https://test-mongo-cai.herokuapp.com/api/shelters';
 
     constructor(private http: HttpClient) { }

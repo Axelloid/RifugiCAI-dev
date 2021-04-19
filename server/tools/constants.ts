@@ -25,7 +25,7 @@ export const MAX_DELAY_GET_REQUEST = 1000 * 10;
 
 export const CAS_BASE_URL = 'https://accesso.cai.it';
 export const AUTH_URL = 'https://services.cai.it/cai-integration-ws/secured/users/';
-export const DISABLE_AUTH = false;
+export const DISABLE_AUTH = true;
 
 export const CAS_LOGOUT_URL = CAS_BASE_URL + '/cai-cas/logout'
 export function getLoginURL() {
