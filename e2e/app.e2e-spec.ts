@@ -9,6 +9,7 @@ describe('Rifugi CAI App', () => {
 
   it('should display message saying app works', () => {
     page.navigateTo();
+    // @ts-ignore
     expect(page.getParagraphText()).toEqual('app works!');
   });
 });

@@ -11,7 +11,7 @@ import { Buffer } from 'buffer';
 export class ShelterService {
 
     // private sheltersBaseUrl = '/api/shelters';
-    private sheltersBaseUrl: string = 'http://localhost:8000/api/shelters';
+    private sheltersBaseUrl = 'http://localhost:8000/api/shelters';
     // private sheltersBaseUrl: string = 'https://test-mongo-cai.herokuapp.com/api/shelters';
 
     constructor(private http: HttpClient) { }
