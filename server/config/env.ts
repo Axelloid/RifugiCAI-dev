@@ -5,7 +5,17 @@ interface IConfig {
     DEV: boolean,
     SERVER_URL: string,
     APP_PORT: string | number,
-    MONGO_URI: string,
+    HOST: string,
+    DBNAME: string,
+    USER: string,
+    PASSWORD: string,
+    DIALECT: string,
+    pool: {
+        max: number,
+        min: number,
+        acquire: number,
+        idle: number
+    }
     getAppBaseURL: () => string,
     getParsedURL: () => string
 }
@@ -15,7 +25,17 @@ const conf: { [type: string]: IConfig } = {
         DEV: false,
         SERVER_URL: "rifugi.cai.it",
         APP_PORT: process.env.PORT || 8000,
-        MONGO_URI: process.env.MONGODB_URI || 'mongodb://localhost:27017/CaiDB',
+        HOST: process.env.HOST || 'localhost',
+        DBNAME: process.env.DBNAME || 'CaiDB',
+        USER: process.env.USER,
+        PASSWORD: process.env.PASSWORD,
+        DIALECT: process.env.DIALECT,
+        pool: {
+            max: 5,
+            min: 0,
+            acquire: 30000,
+            idle: 10000
+        },
         getAppBaseURL: function () {
             return 'http://' + this.SERVER_URL
         },
@@ -27,7 +47,17 @@ const conf: { [type: string]: IConfig } = {
         DEV: true,
         SERVER_URL: "localhost:",
         APP_PORT: process.env.PORT || 8000,
-        MONGO_URI: process.env.MONGODB_URI || 'mongodb://localhost:27017/CaiDB',
+        HOST: process.env.HOST || 'localhost',
+        DBNAME: process.env.DBNAME || 'CaiDB',
+        USER: process.env.USER,
+        PASSWORD: process.env.PASSWORD,
+        DIALECT: process.env.DIALECT,
+        pool: {
+            max: 5,
+            min: 0,
+            acquire: 30000,
+            idle: 10000
+        },
         getAppBaseURL: function () {
             return 'http://' + this.SERVER_URL + this.APP_PORT
         },
@@ -39,7 +69,17 @@ const conf: { [type: string]: IConfig } = {
         DEV: true,
         SERVER_URL: "app-cai2.herokuapp.com",
         APP_PORT: process.env.PORT,
-        MONGO_URI: process.env.MONGODB_URI,
+        HOST: process.env.HOST,
+        DBNAME: process.env.DBNAME || 'CaiDB',
+        USER: process.env.USER,
+        PASSWORD: process.env.PASSWORD,
+        DIALECT: process.env.DIALECT,
+        pool: {
+            max: 5,
+            min: 0,
+            acquire: 30000,
+            idle: 10000
+        },
         getAppBaseURL: function () {
             return 'http://' + this.SERVER_URL
         },
@@ -51,7 +91,17 @@ const conf: { [type: string]: IConfig } = {
         DEV: true,
         SERVER_URL: "localhost:",
         APP_PORT: 8000,
-        MONGO_URI: 'mongodb://localhost:27017/CAITestDB',
+        HOST: process.env.HOST || 'localhost',
+        DBNAME: process.env.DBNAME || 'CaiDB',
+        USER: process.env.USER,
+        PASSWORD: process.env.PASSWORD,
+        DIALECT: process.env.DIALECT,
+        pool: {
+            max: 5,
+            min: 0,
+            acquire: 30000,
+            idle: 10000
+        },
         getAppBaseURL: function () {
             return 'http://' + this.SERVER_URL + this.APP_PORT
         },

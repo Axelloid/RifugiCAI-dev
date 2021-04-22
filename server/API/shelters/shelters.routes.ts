@@ -44,8 +44,7 @@ appRoute.all(
     createPermissionAppAPICheck(AuthService, OPEN_ROUTES)
 );
 
-appRoute
-    .route("/shelters")
+appRoute.route("/shelters")
     .get(function (req, res) {
         const userData: Tools.ICodeInfo = getUserDataFilters(req.session);
         if (userData) {
@@ -154,8 +153,7 @@ appRoute.route("/shelters/byProp/:prop/:value").get(async function (req, res) {
     }
 });
 
-appRoute
-    .route("/shelters/:id")
+appRoute.route("/shelters/:id")
     .get(function (req, res) {
         try {
             if (ObjectId.isValid(req.params.id)) {
@@ -348,7 +346,6 @@ appRoute.route("/shelters/confirm/:section/:id").put(async function (req, res) {
 
             await StagingAreaTools.updateStagingAreaShelterSection(req.params.id, req.body[req.params.section], req.params.section)
             res.status(200).send(true);
-            
         } catch (err) {
             if (!err) {
                 const newShelter: IShelterExtended = req.body;
@@ -457,8 +454,7 @@ appRoute.route("/shelters/csv/:id").get(function (req, res) {
     }
 });
 
-appRoute
-    .route("/shelters/:id/:name")
+appRoute.route("/shelters/:id/:name")
     .get(async function (req, res) {
         try {
             let stagingItem = null;
